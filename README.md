@@ -6,6 +6,11 @@ That applies to
 - PRs made to other PRs
 - Releasing from `release/*` branch
 
+## Steps to reproduce
+
+![image](https://user-images.githubusercontent.com/17435/174351562-c58f29c9-b69b-4a7e-9f35-920243ee9c77.png)
+
+
 1. Release `1.0.0` from `develop` (manually, as you [cannot do that with the woorelease either](https://github.com/woorelease-bugs/initial-release))
 2. Marge a PR directly to `develop`, with a changelog note
 
@@ -19,16 +24,26 @@ That applies to
 	```
 	woorelease cl:generate --product_version=1.0.1 https://github.com/woorelease-bugs/pr-to-branch/tree/develop
 	```	
-	```
-	= 1.0.1 - 2022-06-16 =
-	* Add - README description directly to develop
+	```= 1.0.1 - 2022-06-17 =
+	* Add - README description directly to develop.
+	* Add - a workflow to attach label based on PR branchname directly to `develop`.
 	```
 
 9. Use https://github.com/woorelease-bugs/pr-to-branch/releases/new?tag=1.0.1&branch=develop "Generate release notes" instead 
+	```
+	## What's Changed
+	### New Features 🎉
+	* Add README description directly to develop by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/1
+	* Add release.yml to `add/branch-labels` by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/3
+	* Add a workflow to attach label based on PR branchname directly to `develop` by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/2
+	```
+
+
 
 ## Release branches
 3. `git checkout -b release/1.0.1` on the head of `develop`
-4. Try releasing `1.0.1` from `release/1.0.1`
+4. `git push origin release/1.0.1`
+5. Try releasing `1.0.1` from `release/1.0.1`
 	```
 	woorelease cl:generate --product_version=1.0.1 https://github.com/woorelease-bugs/pr-to-branch/tree/release/1.0.1
 	```	
@@ -36,7 +51,14 @@ That applies to
 	= 1.0.1 - 2022-06-16 =
 	```
 	
-5. Use https://github.com/woorelease-bugs/pr-to-branch/releases/new?tag=1.0.1&branch=release/1.0.1 "Generate release notes" instead 
+6. Use https://github.com/woorelease-bugs/pr-to-branch/releases/new?tag=1.0.1&branch=release/1.0.1 "Generate release notes" instead 
+	```
+	## What's Changed
+	### New Features 🎉
+	* Add README description directly to develop by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/1
+	* Add release.yml to `add/branch-labels` by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/3
+	* Add a workflow to attach label based on PR branchname directly to `develop` by @tomalec in https://github.com/woorelease-bugs/pr-to-branch/pull/2
+	```
 
 ## Prerequisites
 
