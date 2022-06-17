@@ -1,0 +1,24 @@
+changelog:
+  exclude:
+    labels:
+      - "changelog: none"
+    authors:
+      - dependabot[bot]
+  categories:
+    - title: Fixed 🛠
+      labels:
+        - "changelog: fix"
+        - "type: bug"
+    - title: New Features 🎉
+      labels:
+        - "changelog: add"
+        - "type: enhancement"
+    - title: Updated
+      labels:
+        - "changelog: update"
+    - title: Tweaked
+      labels:
+        - "changelog: tweak"
+    - title: Other Changes
+      labels:
+        - "*"
